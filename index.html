@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alexandra | Computing Student Portfolio</title>
+
+<!-- Fonts + icons -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="site-nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div class="logo">Alexandra<span>&lt;/&gt;</span></div>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <a class="nav-cta" href="#"><i class="fa-solid fa-download"></i> Resume</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero on-dark" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow pill"><i class="fa-solid fa-graduation-cap"></i> COMPUTING STUDENT</div>
+      <h1>I build practical systems that solve <span class="accent">real problems.</span></h1>
+      <p class="lead">Databases. Web Development. Problem Solving. Turning ideas into clean, reliable solutions.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projects">View My Projects <i class="fa-solid fa-arrow-right"></i></a>
+        <a class="btn btn-outline-dark" href="#">Download CV <i class="fa-solid fa-download"></i></a>
+      </div>
+      <div class="social-row">
+        <a href="https://github.com/AlexandraNas" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/alexandra-nastase-99235622a" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="mailto:alexandra.nastase@mail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-composition">
+        <div class="code-card">
+          <div class="code-bar"><span></span><span></span><span></span></div>
+          <div class="code-body">
+            <div><span class="k">const</span> alexandra = {</div>
+            <div>&nbsp;&nbsp;role: <span class="s">'Computing Student'</span>,</div>
+            <div>&nbsp;&nbsp;skills: [<span class="s">'Python'</span>, <span class="s">'SQL'</span>,</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">'JavaScript'</span>],</div>
+            <div>&nbsp;&nbsp;currentFocus: <span class="s">'Building clean,</span></div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">reliable code'</span></div>
+            <div>};</div>
+            <div>&nbsp;</div>
+            <div><span class="k">function</span> <span class="f">createImpact</span>() {</div>
+            <div>&nbsp;&nbsp;<span class="k">return</span> <span class="s">'Code. Learn. Grow. Repeat.'</span>;</div>
+            <div>}</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-row"><div class="stat-icon"><i class="fa-solid fa-folder-open"></i></div><div><strong>2</strong><small>Projects</small></div></div>
+          <div class="stat-row"><div class="stat-icon"><i class="fa-solid fa-code"></i></div><div><strong>5</strong><small>Core Skills</small></div></div>
+          <div class="stat-row"><div class="stat-icon"><i class="fa-solid fa-graduation-cap"></i></div><div><strong>CS</strong><small>Student</small></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-visual">
+      <img class="about-photo-img" src="images/hero-photo.jpg" alt="Alexandra working at her laptop">
+      <div class="about-card">
+        <p class="about-card-quote">Always learning, forever curious, and genuinely energised by figuring out how the pieces of a good system fit together.</p>
+        <div class="about-card-stats">
+          <div class="about-card-stat"><strong>2025</strong><span>Started Computing</span></div>
+          <div class="about-card-stat"><strong>3+</strong><span>Languages Used</span></div>
+          <div class="about-card-stat"><strong>2</strong><span>Real Projects</span></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="eyebrow">About Me</div>
+      <h2>Curious mind.<br>Problem solver. <span class="accent">Team player.</span></h2>
+      <p class="desc">I'm currently pursuing a BSc (Hons) Computing degree, with hands-on experience in Python, SQL, and front-end web development. I enjoy solving complex problems, from structuring a relational database to building an interface someone actually wants to use.</p>
+      <div class="info-row">
+        <div class="info-item"><i class="fa-solid fa-location-dot"></i><div><strong>Based in</strong><span>London, UK</span></div></div>
+        <div class="info-item"><i class="fa-solid fa-graduation-cap"></i><div><strong>Education</strong><span>BSc (Hons) Computing</span></div></div>
+        <div class="info-item"><i class="fa-solid fa-envelope-open-text"></i><div><strong>Open to</strong><span>Internships and Grad Roles</span></div></div>
+      </div>
+      <a class="btn btn-outline-light" href="#">More About Me <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="projects on-dark" id="projects">
+  <div class="wrap">
+    <div class="eyebrow">Selected Work</div>
+
+    <div class="project-row">
+      <div class="row-num">01</div>
+      <a class="project-flat-card dark" href="projects/nhs-patient-database.html">
+        <div class="pf-body">
+          <div class="pf-eyebrow">NHS Patient Database</div>
+          <h3>Designing a secure system for sensitive patient data.</h3>
+          <p>A normalised MySQL database with role-based access, password hashing and encryption to protect confidential information.</p>
+          <div class="tag-row"><span class="tag">MySQL</span><span class="tag">Database Design</span><span class="tag">Security</span></div>
+          <div class="cs-link">View Case Study <i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+        <div class="pf-media"><img src="images/nhs-thumb.jpg" alt="NHS Patient Database entity relationship diagram illustration" loading="lazy"></div>
+      </a>
+    </div>
+
+    <div class="project-row">
+      <div class="row-num">02</div>
+      <a class="project-flat-card light" href="projects/beauty-ecommerce.html">
+        <div class="pf-body">
+          <div class="pf-eyebrow">AGL E-Commerce Site</div>
+          <h3>From concept to a seamless shopping experience.</h3>
+          <p>A responsive e-commerce website for a beauty brand, with product listings, cart functionality and a smooth user journey.</p>
+          <div class="tag-row"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+          <div class="cs-link">View Case Study <i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+        <div class="pf-media"><img src="images/beauty-thumb.jpg" alt="AGL beauty e-commerce homepage" loading="lazy"></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS + EXPERIENCE ============ -->
+<section class="skills-exp" id="skills">
+  <div class="wrap se-grid">
+    <div>
+      <div class="eyebrow">Skills</div>
+      <h2>Technologies I work with</h2>
+      <div class="skill-grid">
+        <div class="skill-pill"><div class="icon" style="background:#4479a1">SQL</div>SQL</div>
+        <div class="skill-pill"><div class="icon" style="background:#3776ab">Py</div>Python</div>
+        <div class="skill-pill"><div class="icon" style="background:#e34c26">5</div>HTML</div>
+        <div class="skill-pill"><div class="icon" style="background:#264de4">3</div>CSS</div>
+        <div class="skill-pill"><div class="icon" style="background:#f0db4f;color:#222">JS</div>JavaScript</div>
+      </div>
+    </div>
+
+    <div id="experience">
+      <div class="eyebrow">My Journey</div>
+      <h2>Education and Experience</h2>
+      <div class="timeline">
+        <div class="t-item">
+          <div class="t-dot"></div>
+          <div>
+            <div class="t-date">2025 - Present</div>
+            <h4>BSc (Hons) Computing</h4>
+            <div class="org">Bath Spa University</div>
+            <div class="desc">Coursework spanning databases, algorithms, and software engineering, including a relational database project built for an NHS use case.</div>
+          </div>
+        </div>
+        <div class="t-item">
+          <div class="t-dot"></div>
+          <div>
+            <div class="t-date">2026 - Present</div>
+            <h4>Member, British Computer Society</h4>
+            <div class="org">BCS, The Chartered Institute for IT</div>
+            <div class="desc">Student member of the UK's professional body for IT, keeping in step with the wider computing community and industry standards.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT / FOOTER ============ -->
+<footer id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <p class="lead">I'm currently open to new opportunities. Let's connect!</p>
+        <a class="btn btn-primary" href="#contact">Get In Touch <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div>
+        <div class="contact-info-item">
+          <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+          <div><strong>Email</strong><span><a href="mailto:alexandra.nastase@mail.com">alexandra.nastase@mail.com</a></span></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="icon"><i class="fa-brands fa-linkedin-in"></i></div>
+          <div><strong>LinkedIn</strong><span><a href="https://www.linkedin.com/in/alexandra-nastase-99235622a" target="_blank" rel="noopener">www.linkedin.com/in/alexandra-nastase-99235622a</a></span></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="icon"><i class="fa-brands fa-github"></i></div>
+          <div><strong>GitHub</strong><span><a href="https://github.com/AlexandraNas" target="_blank" rel="noopener">https://github.com/AlexandraNas</a></span></div>
+        </div>
+      </div>
+
+      <!-- Sends via Formspree -->
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/xrpzdqky" method="POST">
+        <div class="form-row">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+        </div>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn btn-primary">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+
+  <div class="wrap footer-bottom">
+    <span>© 2026 Alexandra. All rights reserved.</span>
+    <a href="#home">Back to top <i class="fa-solid fa-arrow-up"></i></a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

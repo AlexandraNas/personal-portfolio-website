@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NHS Patient Database | Case Study | Alexandra</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../case-study.css">
+</head>
+<body>
+<div id="top"></div>
+<!-- ============ NAV ============ -->
+<header class="site-nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <a href="../index.html" class="logo">Alexandra<span>&lt;/&gt;</span></a>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="../index.html#home">Home</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#projects" class="active">Projects</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <a class="nav-cta" href="../index.html#contact"><i class="fa-solid fa-download"></i> Resume</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="cs-hero on-dark">
+  <div class="wrap">
+    <a class="back-link" href="../index.html#projects"><i class="fa-solid fa-arrow-left"></i> Back to Projects</a>
+    <div class="eyebrow pill">Academic / Database Project</div>
+    <h1>NHS Patient Database</h1>
+    <p class="summary">A normalised MySQL database for a simulated NHS UK digital transformation initiative, replacing patient records kept in Word and Excel with a secure, relational system built for multi-user access across NHS Trusts.</p>
+
+    <div class="meta-row">
+      <div class="meta-item"><strong>MySQL</strong><span>Tools</span></div>
+      <div class="meta-item"><strong>2026</strong><span>Completed</span></div>
+    </div>
+
+    <img class="cs-hero-shot cs-hero-shot-er" src="images/nhs-er-diagram.png" alt="Entity relationship diagram for the NHS_Trust_DB database, showing the Patients, Doctors, Clinics, Medications, Appointments and Prescriptions tables and their relationships">
+  </div>
+</section>
+
+<!-- ============ MAIN CONTENT ============ -->
+<section class="cs-section">
+  <div class="wrap cs-columns">
+
+    <aside class="cs-side">
+      <div class="cs-side-block">
+        <h4>My Role</h4>
+        <p>Sole designer and developer: data analysis, normalisation, ER modelling, schema implementation, querying, and security.</p>
+      </div>
+      <div class="cs-side-block">
+        <h4>Tech Stack</h4>
+        <div class="tag-row">
+          <span class="tag">MySQL</span>
+          <span class="tag">ER Modelling</span>
+          <span class="tag">Normalisation</span>
+          <span class="tag">RBAC</span>
+        </div>
+      </div>
+      <div class="cs-side-block">
+        <h4>Links</h4>
+        <p>
+          <a href="https://github.com/AlexandraNas/nhs-dba" style="color:var(--purple); font-weight:600;" target="_blank" rel="noopener">GitHub repo →</a>
+        </p>
+      </div>
+    </aside>
+
+    <div class="cs-body">
+      <h2>The Problem</h2>
+      <p>As part of a simulated NHS UK digital transformation initiative, patient records were being kept in Microsoft Word and Excel, a structure riddled with multi-valued fields (a single "MedicationList" cell holding several drugs at once), duplicated patient and clinic details across every appointment record, and deletion anomalies where removing one appointment could wipe out reference data needed elsewhere.</p>
+
+      <h2 style="margin-top:40px;">The Goal</h2>
+      <p>Design and build a centralised relational database that replaces those manual records, reducing redundancy, enforcing data integrity, and securely managing patient, clinician, and prescription information for multiple users across NHS Trusts.</p>
+
+      <h2 style="margin-top:40px;">My Approach</h2>
+      <ol class="cs-list">
+        <li><strong>Anomaly analysis</strong>: audited the existing unnormalised data to identify multi-valued attributes, redundancy, and deletion anomalies before designing a fix.</li>
+        <li><strong>Normalisation</strong>: restructured the data through 1NF, 2NF and 3NF, arriving at six clean entities: Patients, Doctors, Clinics, Medications, Appointments, and Prescriptions.</li>
+        <li><strong>ER diagram</strong>: modelled the schema in draw.io using crow's foot notation to define cardinality, including the many-to-many relationship between patients and medications.</li>
+        <li><strong>Schema implementation</strong>: built the database in MySQL with <code>CREATE TABLE</code> DDL, <code>AUTO_INCREMENT</code> primary keys, foreign keys, and <code>UNIQUE</code>/<code>CHECK</code> constraints (valid email formats, sensible date-of-birth ranges).</li>
+        <li><strong>Testing and validation</strong>: populated the tables with realistic synthetic data, then tested that invalid inserts (bad emails, out-of-hours appointments, invalid foreign keys) were correctly rejected.</li>
+        <li><strong>Querying and automation</strong>: wrote reporting queries, a stored procedure to automate appointment booking, and a trigger to keep doctor specialities consistently formatted.</li>
+        <li><strong>Security</strong>: layered on role-based access control, password hashing, and encryption for sensitive clinical data.</li>
+      </ol>
+
+      <h2 style="margin-top:40px;">Key Features</h2>
+      <ul class="cs-list">
+        <li>Fully normalised (3NF) six-table schema, with the Prescriptions table resolving the many-to-many relationship between patients and medications.</li>
+        <li>Business-rule constraints enforced at the database level: appointments can only be booked on weekdays within NHS working hours, and duplicate bookings are blocked by a composite <code>UNIQUE</code> constraint.</li>
+        <li>A stored procedure that automates appointment booking, and a trigger that normalises doctor specialities to uppercase on insert.</li>
+        <li>Role-based access control with four roles (doctor, receptionist, admin, patient), each restricted to the data and operations it actually needs.</li>
+        <li>Patient passwords secured with SHA-2 hashing, and sensitive diagnosis data protected with AES encryption.</li>
+        <li>Parameterised (prepared statement) queries to prevent SQL injection.</li>
+      </ul>
+
+      <h2 style="margin-top:40px;">Challenges and how I solved them</h2>
+      <div class="challenge-block">
+        <h4><i class="fa-solid fa-triangle-exclamation"></i> Modelling the patient–medication relationship</h4>
+        <p>A patient can be prescribed many medications, and a medication is prescribed to many patients, a many-to-many relationship a simple foreign key can't express. I resolved it with a <em>Prescriptions</em> junction table linking Patients, Medications, Appointments and Doctors, which also gave me a natural place to store prescription-specific data like the issue date and whether it's a repeat prescription.</p>
+      </div>
+      <div class="challenge-block">
+        <h4><i class="fa-solid fa-triangle-exclamation"></i> Restricting access without breaking legitimate use</h4>
+        <p>Enforcing least-privilege access meant a patient should see their own medications but nothing else, while admins need broader access. I implemented this with MySQL role-based access control and verified it by logging in as each role in turn. For example, confirming a patient account could query the Medications table but was denied access to other tables entirely.</p>
+      </div>
+      <div class="challenge-block">
+        <h4><i class="fa-solid fa-triangle-exclamation"></i> Preventing SQL injection</h4>
+        <p>A naive query built by concatenating user input is vulnerable to injection: an input like <code>' OR '1'='1</code> can turn a login check into a condition that's always true. I demonstrated the vulnerability first, then rebuilt the affected queries as prepared statements, so user input is always treated as data rather than executable SQL.</p>
+      </div>
+
+      <h2 style="margin-top:40px;">Screenshots</h2>
+      <div class="shot-grid">
+        <figure class="shot-card">
+          <a href="images/nhs-schema-sql.png" target="_blank" rel="noopener" aria-label="Open full-size screenshot">
+            <img src="images/nhs-schema-sql.png" alt="SQL DDL script creating the NHS_Trust_DB database and the Medications table with primary key and constraints">
+          </a>
+        </figure>
+        <figure class="shot-card">
+          <a href="images/nhs-constraint-testing-hq.png" target="_blank" rel="noopener" aria-label="Open full-size screenshot">
+            <img src="images/nhs-constraint-testing-full.png" alt="MySQL Workbench showing the NHS_Trust_DB schema tree alongside test queries and the Action Output panel confirming five constraint-violation tests were correctly rejected">
+          </a>
+          <figcaption>Click to view full screenshot</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section on-dark" style="background:var(--dark);">
+  <div class="wrap">
+    <h2>Results and what I learned</h2>
+    <p>The finished database meets its brief: a structured, efficient, and secure system for handling healthcare data, with normalisation and constraints keeping it consistent, and role-based access control plus encryption protecting patient data in line with the Data Protection Act 2018.</p>
+    <p>This project moved database design from theory into practice, translating a messy, real-world scenario into normalised entities and relationships, then proving the design worked through deliberate testing rather than assuming it. It sharpened my thinking around normalisation trade-offs, business-rule constraints, and database security (RBAC, hashing, encryption, injection prevention), skills directly relevant to a database administration or backend-focused role.</p>
+    <p>If I extended it further, the next additions would be automated backup and recovery, a BI dashboard for reporting, and query optimisation for larger datasets.</p>
+    </div>
+</section>
+
+<!-- ============ NEXT PROJECT ============ -->
+<section class="cs-next">
+  <div class="wrap">
+    <div class="eyebrow">Next Project</div>
+    <a href="beauty-ecommerce.html">
+      <h3>Beauty E-Commerce Site</h3>
+      <i class="fa-solid fa-arrow-right"></i>
+    </a>
+  </div>
+</section>
+
+<!-- ============ CONTACT CTA / FOOTER ============ -->
+<footer>
+  <div class="wrap footer-cta">
+    <h2 class="footer-heading">Want to know more about this project?</h2>
+    <p class="lead">I'm happy to walk through the code, decisions, or answer questions.</p>
+    <a class="btn btn-primary" href="../index.html#contact">Get In Touch <i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 Alexandra. All rights reserved.</span>
+    <a href="#top">Back to top <i class="fa-solid fa-arrow-up"></i></a>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

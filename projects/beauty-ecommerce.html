@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beauty E-Commerce Site | Case Study | Alexandra</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../case-study.css">
+</head>
+<body>
+<div id="top"></div>
+<!-- ============ NAV ============ -->
+<header class="site-nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <a href="../index.html" class="logo">Alexandra<span>&lt;/&gt;</span></a>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="../index.html#home">Home</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#projects" class="active">Projects</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <a class="nav-cta" href="../index.html#contact"><i class="fa-solid fa-download"></i> Resume</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="cs-hero on-dark">
+  <div class="wrap">
+    <a class="back-link" href="../index.html#projects"><i class="fa-solid fa-arrow-left"></i> Back to Projects</a>
+    <div class="eyebrow pill">Academic / Front-End Project</div>
+    <h1>Beauty E-Commerce Site</h1>
+    <p class="summary">A front-end e-commerce concept for AGL (Alexa Glow London), a fictional beauty brand, built as the summative assignment for my Web Development module. Visitors can browse products by category, open a product to see its full description and shades, add items to a bag, and go through a complete mock checkout, all running client side with no backend.</p>
+
+    <div class="meta-row">
+      <div class="meta-item"><strong>HTML, CSS, JS</strong><span>Tools</span></div>
+      <div class="meta-item"><strong>2026</strong><span>Completed</span></div>
+    </div>
+
+    <img class="cs-hero-shot cs-hero-shot-cream" src="images/beauty-hero.png" alt="AGL beauty e-commerce site shown responsively across desktop, laptop, tablet and mobile screens">
+  </div>
+</section>
+
+<!-- ============ MAIN CONTENT ============ -->
+<section class="cs-section">
+  <div class="wrap cs-columns">
+
+    <aside class="cs-side">
+      <div class="cs-side-block">
+        <h4>My Role</h4>
+        <p>Sole designer and developer: all HTML, CSS and JavaScript, the product catalogue, and the accessibility and performance fixes below.</p>
+      </div>
+      <div class="cs-side-block">
+        <h4>Tech Stack</h4>
+        <div class="tag-row">
+          <span class="tag">HTML5</span>
+          <span class="tag">CSS3</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Lighthouse</span>
+        </div>
+      </div>
+      <div class="cs-side-block">
+        <h4>Links</h4>
+        <p>
+          <a href="https://github.com/AlexandraNas/cosmetics-website" style="color:var(--purple); font-weight:600;" target="_blank" rel="noopener">GitHub repo →</a><br>
+          <a href="https://alexandranas.github.io/cosmetics-website/" style="color:var(--purple); font-weight:600; display:inline-block; margin-top:8px;" target="_blank" rel="noopener">Live site →</a>
+        </p>
+      </div>
+    </aside>
+
+    <div class="cs-body">
+      <h2>The Goal</h2>
+      <p>Build a working online shop front for AGL, a fictional beauty brand: visitors should be able to browse products by category, open a product to see its full description and ingredients, add items to a bag, adjust quantities, and go all the way through a mock checkout, entirely in the browser with no real backend or database.</p>
+
+      <h2 style="margin-top:40px;">The Brief</h2>
+      <p>Summative assignment for the Web Development module: design and build a front-end e-commerce site with a homepage, a filterable product catalogue, a persistent shopping bag, and a full checkout flow, styled with a visual identity (gold accents, elegant serif display type) that actually feels like a beauty brand rather than a generic template.</p>
+
+      <h2 style="margin-top:40px;">My Approach</h2>
+      <ol class="cs-list">
+        <li><strong>Planned the user flow</strong>: home → category → product detail → bag → checkout → confirmation, before writing any code.</li>
+        <li><strong>Built a 16-product catalogue</strong> across four categories (Skincare, Makeup, Hair Care, Beauty Tools), with category filter buttons that work together with a live search bar.</li>
+        <li><strong>Designed a gold, elegant visual identity</strong> for the brand: a serif display font for headings paired with a clean sans-serif body, and a warm gold and cream palette instead of a generic template look.</li>
+        <li><strong>Built product detail modals</strong> with an image zoom, a features checklist, ingredient tags, and keyboard-accessible shade swatches for products with more than one option (foundation, lipstick, mascara).</li>
+        <li><strong>Implemented the bag in vanilla JavaScript</strong>, persisted with <code>localStorage</code> so it survives a refresh or a trip between pages, with a live subtotal, total, and free-shipping progress bar.</li>
+        <li><strong>Built the checkout flow</strong>: a validated billing, delivery, and payment form that generates a mock order number and redirects to a confirmation page.</li>
+        <li><strong>Audited the site with Lighthouse</strong> and fixed what it flagged, covering accessibility, performance, and semantic structure.</li>
+      </ol>
+
+      <h2 style="margin-top:40px;">Key Features</h2>
+      <ul class="cs-list">
+        <li>16 products across 4 categories, with category filters and a live search bar that work together, including a "no products found" state.</li>
+        <li>Product modals with image zoom, a features checklist, ingredient pill tags, and shade swatches that update the product photo as you pick.</li>
+        <li>A shopping bag persisted with <code>localStorage</code>, with live totals and a free-shipping progress bar.</li>
+        <li>A full checkout flow with client-side validation, a generated order number, and a confirmation page.</li>
+        <li>Accessible by design: semantic HTML, descriptive alt text, ARIA labels on icon-only buttons, visually-hidden form labels, and keyboard-operable modals and swatches.</li>
+        <li>Mobile-first responsive layout with a sticky nav, dropdown menu, and mobile hamburger menu.</li>
+      </ul>
+
+      <h2 style="margin-top:40px;">Challenges and how I solved them</h2>
+      <div class="challenge-block">
+        <h4><i class="fa-solid fa-triangle-exclamation"></i> A link that relied on colour alone</h4>
+        <p>Lighthouse flagged the "Privacy Policy" link inside the newsletter text: it only picked up an underline on hover, so the rest of the time it looked identical to the surrounding paragraph, which fails for anyone who can't rely on colour contrast to spot it as a link. I made the underline permanent, with only the colour shifting on hover, so it reads as a link at every moment rather than just when a mouse happens to be over it.</p>
+      </div>
+      <div class="challenge-block">
+        <h4><i class="fa-solid fa-triangle-exclamation"></i> A skipped heading level</h4>
+        <p>The four category shortcut cards jumped straight from the page's <code>h1</code> to <code>h3</code>, skipping <code>h2</code> entirely, which breaks the outline that screen reader users navigate by even though nobody would notice it visually. I changed those headings to <code>h2</code> so the page reads <code>h1 → h2 → h3</code> with nothing skipped, and kept that same order when the cards later moved onto the home page under a "Shop by Collection" heading.</p>
+      </div>
+      <div class="challenge-block">
+        <h4><i class="fa-solid fa-triangle-exclamation"></i> Fonts and icons blocking the first paint</h4>
+        <p>Lighthouse scored <code>cart.html</code> at 79 for performance, mostly down to render-blocking requests. The fonts were being pulled in through an <code>@import</code> inside the stylesheet, which forces the browser to fetch and parse the whole CSS file before it even discovers the fonts are needed, turning a parallel download into a slow chain. I moved the fonts into <code>&lt;link rel="preconnect"&gt;</code> tags in the page head and switched Font Awesome to a non-blocking load pattern, which took performance up to 96 without changing how anything looks.</p>
+      </div>
+
+      <h2 style="margin-top:40px;">Screenshots</h2>
+      <div class="shot-grid">
+        <figure class="shot-card">
+          <a href="images/beauty-lighthouse-before.png" target="_blank" rel="noopener" aria-label="Open full-size screenshot">
+            <img src="images/beauty-lighthouse-before.png" alt="Lighthouse accessibility audit before the fix, scoring 94, flagging the newsletter link that relied on colour alone">
+          </a>
+          <figcaption>Before: 94 accessibility</figcaption>
+        </figure>
+        <figure class="shot-card">
+          <a href="images/beauty-lighthouse-after.png" target="_blank" rel="noopener" aria-label="Open full-size screenshot">
+            <img src="images/beauty-lighthouse-after.png" alt="Lighthouse audit after the fix, scoring 100 for accessibility on products.html">
+          </a>
+          <figcaption>After: 100 accessibility</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section on-dark" style="background:var(--dark);">
+  <div class="wrap">
+    <h2>Results and what I learned</h2>
+    <p>The finished site delivers a full front-end shopping experience for a fictional beauty brand, from browsing and filtering a 16-product catalogue to a persisted bag and a validated mock checkout, without a single line of backend code. Auditing it with Lighthouse and fixing what it flagged (a colour-only link, a skipped heading level, and render-blocking font and icon requests) took <code>products.html</code> to 100 for accessibility, best practices, and SEO, and pushed <code>cart.html</code>'s performance score from 79 to 96.</p>
+    <p>It sharpened my eye for the kind of accessibility and performance issues that don't show up just by looking at a page, and reinforced good habits around semantic HTML, ARIA labelling, and how resource loading order affects real load time.</p>
+  </div>
+</section>
+
+<!-- ============ NEXT PROJECT ============ -->
+<section class="cs-next">
+  <div class="wrap">
+    <div class="eyebrow">Next Project</div>
+    <a href="nhs-patient-database.html">
+      <h3>NHS Patient Database</h3>
+      <i class="fa-solid fa-arrow-right"></i>
+    </a>
+  </div>
+</section>
+
+<!-- ============ CONTACT CTA / FOOTER ============ -->
+<footer>
+  <div class="wrap footer-cta">
+    <h2 class="footer-heading">Want to know more about this project?</h2>
+    <p class="lead">I'm happy to walk through the code, decisions, or answer questions.</p>
+    <a class="btn btn-primary" href="../index.html#contact">Get In Touch <i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 Alexandra. All rights reserved.</span>
+    <a href="#top">Back to top <i class="fa-solid fa-arrow-up"></i></a>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>
