@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StockFlow Inventory System | Case Study | Alexandra</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../case-study.css">
+</head>
+<body>
+<div id="top"></div>
+<!-- ============ NAV ============ -->
+<header class="site-nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <a href="../index.html" class="logo">Alexandra<span>&lt;/&gt;</span></a>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="../index.html#home">Home</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#projects" class="active">Projects</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <a class="nav-cta" href="../Alexandra_Nastase_CV.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-download"></i> Resume</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="cs-hero on-dark">
+  <div class="wrap">
+    <a class="back-link" href="../index.html#projects"><i class="fa-solid fa-arrow-left"></i> Back to Projects</a>
+    <div class="eyebrow pill">Personal Project / Full-Stack Web App</div>
+    <h1>StockFlow</h1>
+    <p class="summary">A full-stack inventory and stock management system for a beauty retailer, built with a Python/Flask REST API and a vanilla JavaScript front-end, with role-based accounts for managers and sales staff drawing on my own retail experience.</p>
+
+    <div class="meta-row">
+      <div class="meta-item"><strong>Python &amp; Flask</strong><span>Tools</span></div>
+      <div class="meta-item"><strong>2026</strong><span>Completed</span></div>
+    </div>
+
+    <img class="cs-hero-shot cs-hero-shot-cream" src="images/stockflow-dashboard.png" alt="StockFlow dashboard showing products tracked, stock value, units in stock, low stock alerts, and a recent activity feed">
+  </div>
+</section>
+
+<!-- ============ MAIN CONTENT ============ -->
+<section class="cs-section">
+  <div class="wrap cs-columns">
+
+    <aside class="cs-side">
+      <div class="cs-side-block">
+        <h4>My Role</h4>
+        <p>Sole designer and developer: database schema, the Flask REST API, authentication and role-based access control, and the front-end.</p>
+      </div>
+      <div class="cs-side-block">
+        <h4>Tech Stack</h4>
+        <div class="tag-row">
+          <span class="tag">Python</span>
+          <span class="tag">Flask</span>
+          <span class="tag">SQLite</span>
+          <span class="tag">REST API</span>
+          <span class="tag">RBAC</span>
+        </div>
+      </div>
+      <div class="cs-side-block">
+        <h4>Links</h4>
+        <p>
+          <a href="https://github.com/AlexandraNas/stock-flow" style="color:var(--purple); font-weight:600;" target="_blank" rel="noopener">GitHub repo →</a><br>
+          <a href="https://stock-flow-k3hy.onrender.com" style="color:var(--purple); font-weight:600; display:inline-block; margin-top:8px;" target="_blank" rel="noopener">Live site →</a>
+        </p>
+      </div>
+    </aside>
+
+    <div class="cs-body">
+      <h2>The Problem</h2>
+      <p>From working retail shop floors, I've seen first-hand how easily stock tracking breaks down when it's kept on paper or scattered across spreadsheets: nobody notices a product has run out until a customer asks for it, deliveries and sales aren't logged consistently, and staff without management responsibilities often can't see stock levels at all, or can see and change things they shouldn't.</p>
+
+      <h2 style="margin-top:40px;">The Goal</h2>
+      <p>Build a working inventory and stock management system that a small beauty retailer could actually use: a product catalogue with live stock levels, a simple way for any staff member to log deliveries and sales, automatic low-stock alerts, and reporting, all behind accounts that separate what a manager can do from what a sales assistant can do.</p>
+
+      <h2 style="margin-top:40px;">My Approach</h2>
+      <ol class="cs-list">
+        <li><strong>Schema design</strong>: modelled four tables, users, categories, products, and stock_movements, keeping a live current_stock value on each product that updates atomically with every logged movement, so the dashboard never has to recalculate stock from history on every request.</li>
+        <li><strong>REST API</strong>: built the backend as a Flask JSON API, with endpoints for authentication, products, categories, stock movements, reports, and staff management.</li>
+        <li><strong>Authentication</strong>: implemented cookie-based sessions with Flask's <code>session</code>, and passwords hashed with Werkzeug rather than stored in plain text.</li>
+        <li><strong>Role-based access control</strong>: wrote a custom <code>login_required</code>/<code>manager_required</code> decorator pattern so manager-only routes (deleting products, managing staff) reject a sales assistant's request at the server, not just hide the button in the UI.</li>
+        <li><strong>Front-end</strong>: a single-page app shell in vanilla HTML, CSS, and JavaScript, using <code>fetch()</code> against the API, with no framework or build step.</li>
+        <li><strong>Demo data and deployment</strong>: a seed script generates a realistic product catalogue and five weeks of stock movement history, and the app is deployed live on Render.</li>
+      </ol>
+
+      <h2 style="margin-top:40px;">Key Features</h2>
+      <ul class="cs-list">
+        <li>Live dashboard: products tracked, total stock value, units in stock, and low-stock alerts, plus a recent-activity feed.</li>
+        <li>Every stock movement (delivery, sale, damage, correction, return) is logged with quantity, reason, an optional note, and who logged it, and updates the product's stock level automatically.</li>
+        <li>Role-based access control enforced in two places at once: manager-only controls are hidden in the UI, and the same routes return a 403 on the server if a sales assistant calls them directly.</li>
+        <li>Reporting on top-selling products by units sold and revenue.</li>
+        <li>Manager-only staff management, for adding new accounts and assigning roles.</li>
+      </ul>
+
+      <h2 style="margin-top:40px;">Challenges and how I solved them</h2>
+      <div class="challenge-block">
+        <h4><i class="fa-solid fa-triangle-exclamation"></i> Keeping stock levels accurate under a stream of movements</h4>
+        <p>Recomputing stock from the full movement history on every page load would work but doesn't scale, and a naive update can let stock go negative if two "stock out" entries are logged in quick succession. I kept a denormalised <code>current_stock</code> column that updates atomically alongside each movement insert, with a guard that rejects an "out" movement if the quantity exceeds what's actually in stock.</p>
+      </div>
+      <div class="challenge-block">
+        <h4><i class="fa-solid fa-triangle-exclamation"></i> Access control that can't be bypassed from the browser</h4>
+        <p>Hiding a "Delete Product" button for a sales assistant means nothing if the underlying API route still accepts the request from anyone logged in. I tested this directly, calling manager-only endpoints from a sales assistant session with the UI controls removed entirely, and confirmed the server itself rejects them with a 403 regardless of what the front-end shows.</p>
+      </div>
+      <div class="challenge-block">
+        <h4><i class="fa-solid fa-triangle-exclamation"></i> Getting a Flask app to actually run on a free host</h4>
+        <p>The app worked perfectly locally on a fixed port, then returned nothing when I first deployed it, since hosting platforms assign their own port at runtime through a <code>PORT</code> environment variable rather than letting an app hardcode one. I updated the app to read that variable when present, bind to <code>0.0.0.0</code> instead of localhost, and seed the demo database automatically on first boot, since there's no terminal on the live server to run a seed script by hand.</p>
+      </div>
+      <div class="challenge-block">
+        <h4><i class="fa-solid fa-triangle-exclamation"></i> A colour-contrast issue Lighthouse caught, that eyes missed</h4>
+        <p>Running a Lighthouse audit on the deployed app scored Accessibility at 90, flagging the small "IN"/"OUT" stock-movement badges: the green and blue badge text sat at roughly 4.26:1 and 3.17:1 contrast against their backgrounds, both under the 4.5:1 WCAG AA minimum for text that size. I calculated the exact contrast ratio for each colour pair, then darkened the green and blue until both cleared 4.5:1 with a safety margin (5.0:1 and 5.1:1), without changing the warm palette the rest of the app uses. Re-running Lighthouse afterwards confirmed a 100.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section">
+  <div class="wrap">
+    <h2>Accessibility Audit</h2>
+    <p style="margin-bottom:22px;">Before/after Lighthouse scores from the colour-contrast fix above, run against the live deployment.</p>
+    <div class="shot-grid">
+      <figure class="shot-card">
+        <a href="images/stockflow-a11y-before.jpg" target="_blank" rel="noopener" aria-label="Open full-size screenshot">
+          <img src="images/stockflow-a11y-before.jpg" alt="Lighthouse accessibility score of 90 before the fix, flagging insufficient colour contrast on the IN and OUT stock movement badges">
+        </a>
+        <figcaption>Before: 90</figcaption>
+      </figure>
+      <figure class="shot-card">
+        <a href="images/stockflow-a11y-after.jpg" target="_blank" rel="noopener" aria-label="Open full-size screenshot">
+          <img src="images/stockflow-a11y-after.jpg" alt="Lighthouse accessibility score of 100 after darkening the badge colours to meet WCAG AA contrast">
+        </a>
+        <figcaption>After: 100</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section on-dark" style="background:var(--dark);">
+  <div class="wrap">
+    <h2>Results and what I learned</h2>
+    <p>StockFlow is a complete, working inventory system: log in as a manager or a sales assistant, add and edit products, log stock in and out, and see the effect immediately on the dashboard and reports, deployed live rather than only running locally.</p>
+    <p>Where my NHS project is about database design and my e-commerce site is about the front-end, this project ties both together: a real backend API, a database it actually talks to, and a UI built to consume that API, plus the practical experience of taking a Flask app from my own machine to a live, publicly reachable deployment.</p>
+    <p>If I extended it further, the next additions would be barcode-based stock lookups, email alerts when stock hits its reorder threshold, and a supplier/purchase-order model on top of the existing stock movements.</p>
+  </div>
+</section>
+
+<!-- ============ NEXT PROJECT ============ -->
+<section class="cs-next">
+  <div class="wrap">
+    <div class="eyebrow">Next Project</div>
+    <a href="nhs-patient-database.html">
+      <h3>NHS Patient Database</h3>
+      <i class="fa-solid fa-arrow-right"></i>
+    </a>
+  </div>
+</section>
+
+<!-- ============ CONTACT CTA / FOOTER ============ -->
+<footer>
+  <div class="wrap footer-cta">
+    <h2 class="footer-heading">Want to know more about this project?</h2>
+    <p class="lead">I'm happy to walk through the code, decisions, or answer questions.</p>
+    <a class="btn btn-primary" href="../index.html#contact">Get In Touch <i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 Alexandra. All rights reserved.</span>
+    <a href="#top">Back to top <i class="fa-solid fa-arrow-up"></i></a>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>
