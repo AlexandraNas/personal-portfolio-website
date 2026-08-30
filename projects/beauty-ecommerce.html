@@ -122,7 +122,8 @@
         <p>Lighthouse scored <code>cart.html</code> at 79 for performance, mostly down to render-blocking requests. The fonts were being pulled in through an <code>@import</code> inside the stylesheet, which forces the browser to fetch and parse the whole CSS file before it even discovers the fonts are needed, turning a parallel download into a slow chain. I moved the fonts into <code>&lt;link rel="preconnect"&gt;</code> tags in the page head and switched Font Awesome to a non-blocking load pattern, which took performance up to 96 without changing how anything looks.</p>
       </div>
 
-      <h2 style="margin-top:40px;">Screenshots</h2>
+      <h2 style="margin-top:40px;">Accessibility Audit</h2>
+      <p style="margin-bottom:22px;">Before/after Lighthouse scores from the accessibility fixes above, run on products.html.</p>
       <div class="shot-grid">
         <figure class="shot-card">
           <a href="images/beauty-lighthouse-before.png" target="_blank" rel="noopener" aria-label="Open full-size screenshot">
