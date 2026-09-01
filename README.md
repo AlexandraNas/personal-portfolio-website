@@ -2,7 +2,7 @@
 
 Personal portfolio website — built to showcase my projects and skills as a BSc (Hons) Computing student.
 
-**Live site:** [add your link here once deployed]
+**Live site:** https://alexandranas.github.io/personal-portfolio-website/
 
 ## Built with
 
